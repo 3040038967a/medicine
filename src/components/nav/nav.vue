@@ -16,17 +16,12 @@
 				mag:[]
 			}
 		},
-		
-		
 		mounted:function(){
 			this.mag=this.$store.state.nav;
-			console.log(this.mag);
-			
-			
+			console.log(this.mag);	
 		},
 		
 		methods:{
-			
 			dick:function(index){
 				for(var i=0;i<this.mag.length;i++){
 					this.mag[i].kai=false;
@@ -34,11 +29,7 @@
 				this.mag[index].kai=!this.mag[index].kai;
 				
 				this.$router.replace(this.mag[index].to);
-				
-				
 			}
-			
-			
 		}
 		
 		

@@ -3,24 +3,17 @@
 <div>
 	<!-- 轮播图部分 -->
 	<div class="swiper-container">
-  <div class="swiper-wrapper">
-  
-     <!-- swiper-no-swiping，禁止手动切换 -->
-     <div class="swiper-slide " v-for="(i,index) in arry" :hao="index" :key=index >
-    	<img :src=i.src alt=""  @click=to(index)>
-    </div>
-	
-	
-  </div>
-  
-   <!-- 如果需要滚动条 -->
-    <div class="swiper-pagination"></div>
-   
-  
-</div>
-
-
-
+		<div class="swiper-wrapper">
+	  
+			 <!-- swiper-no-swiping，禁止手动切换 -->
+			<div class="swiper-slide " v-for="(i,index) in arry" :hao="index" :key=index >
+				<img :src=i.src alt=""  @click=to(index)>
+			</div>
+		
+		</div>
+		<!-- 如果需要滚动条 -->
+		<div class="swiper-pagination"></div>
+	</div>
 </div>
 	
 </template>
@@ -33,18 +26,14 @@
 		name:"lunbo",
 		data:function(){
 			return{
-				
 				arry:[]
-				
 			}
 		},
-		
 		
 		// 创建之后，给数组赋值
 		created:function(){
 			this.arry=this.$store.state.lb;
 			console.log(this.arry);
-			
 			
 		},
 		
@@ -62,7 +51,6 @@
 					paginationType : 'fraction'
 					
 				  }
-				
 			})
 			
 		},
@@ -78,18 +66,10 @@
 				}
 				console.log(id,id1);
 				
-				
-				
-				
 				this.$store.commit("setto1",val);
 				// this.$store.commit("setto2",id1);
 				this.$router.replace(this.arry[index].to);
-				
-				
-				
-				
-				
-				
+		
 			}
 			
 			

@@ -3,9 +3,6 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-
-
-
 // 导航条数据
 let nav={
 		state:[
@@ -18,15 +15,10 @@ let nav={
 				children:[
 					{kai:true,to:"/project/drug",name:"医药产品"},
 					{kai:false,to:"/project/instrument",name:"器械产品"}
-					
-					
-					
-					
 				]
 				
 			},
 			{name:"招聘",to:"/recurit",kai:false},
-			
 			{
 				name:"简介",
 				to:"/notice/brief",
@@ -56,48 +48,17 @@ let nav={
 				state[val.id].children[val.id1].kai=true;
 			}
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-	
 		}	
 }
 
 // 轮播图数据
 let lb={
 	state:[
-		{src:"https://0.rc.xiniu.com/g2/M00/8C/D3/CgAGfFrv_tGAal98AAKg_BqBmps055.jpg",kai:true,to:"/notice/brief",hao:4,hao1:0},
-		{src:"https://0.rc.xiniu.com/g2/M00/8D/8C/CgAGfFrxaCKANSzSAAGNPclQnUc256.jpg",kai:true,to:"/project/drug",hao:2,hao1:0},
-		{src:"https://0.rc.xiniu.com/g2/M00/8D/8C/CgAGfFrxaFOAGqzrAAF8MOxwih8342.jpg",kai:true,to:"/project/instrument",hao:2,hao1:1}	
+		{src:"https://0.rc.xiniu.com/g2/M00/8C/D3/CgAGfFrv_tGAal98AAKg_BqBmps055.jpg",to:"/notice/brief",hao:4,hao1:0},
+		{src:"https://0.rc.xiniu.com/g2/M00/8D/8C/CgAGfFrxaCKANSzSAAGNPclQnUc256.jpg",to:"/project/drug",hao:2,hao1:0},
+		{src:"https://0.rc.xiniu.com/g2/M00/8D/8C/CgAGfFrxaFOAGqzrAAF8MOxwih8342.jpg",to:"/project/instrument",hao:2,hao1:1}	
 	]
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // 声明一个变量接受数据
@@ -105,7 +66,6 @@ let state= new Vuex.Store({
 	modules:{
 		nav,
 		lb
-		
 		
 	}
 })
