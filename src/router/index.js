@@ -16,14 +16,20 @@ import Culture from "@/components/notice/culture";
 //产品的两个耳机路由
 import Drug from "@/components/project/drug";
 import Instrument from "@/components/project/instrument";
+import Project2 from "@/components/project/project2";
 
+// 新闻详情路由
+import New from "@/components/new";
+
+//产品详情
+import chanpin from "@/components/project/show";
 
 
 
 
 Vue.use(Router)
 
-export default new Router({
+var router= new Router({
   routes: [
 		// 首页
     {
@@ -74,6 +80,10 @@ export default new Router({
 				{
 					path:"instrument",
 					component:Instrument
+				},
+				{
+					path:"project2",
+					component:Project2
 				}
 				
 				
@@ -96,13 +106,25 @@ export default new Router({
 			path:'/recurit',
 			component:Recurit
 		
+		},
+		// 新闻详情
+		{
+			path:"/new",
+			component:New
+		},
+		
+		{
+			name:"chanpin",
+			path:"/chanpin",
+			component:chanpin
 		}
 		
-		
-		
-		
-		
-		
+	
 		
   ]
 })
+
+
+
+
+export default router;

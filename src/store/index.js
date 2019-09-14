@@ -10,12 +10,12 @@ let nav={
 			{name:"新闻",to:"/news",kai:false},
 			{
 				name:"产品",
-				to:"/project/drug",
+				to:"/project/project2",
 				kai:false,
 				children:[
-					{kai:true,to:"/project/drug",name:"医药产品"},
+					{kai:false,to:"/project/drug",name:"医药产品"},
 					{kai:false,to:"/project/instrument",name:"器械产品"}
-				]
+				   ]
 				
 			},
 			{name:"招聘",to:"/recurit",kai:false},
@@ -46,7 +46,35 @@ let nav={
 				}
 				
 				state[val.id].children[val.id1].kai=true;
+			},
+			
+			
+			// 全部变成false
+			setto2:function(state,val){
+				    
+				for (var j=0;j<state[val].children.length;j++){
+					state[val].children[j].kai=false;
+				}
+				
+				
+			},
+			
+			// 改变某一个路由
+			setto3:function(state,id){
+				for(var i=0;i<state.length;i++){
+					state[i].kai=false;
+					
+				}
+				state[id].kai=true;
+				
+				
 			}
+			
+			
+			
+			
+			
+			
 			
 		}	
 }

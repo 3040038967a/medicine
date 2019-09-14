@@ -8,6 +8,19 @@ import axios from "axios"
 import jquery from "jquery"
 import store from "./store"
 
+
+// 安装百度地图
+import BaiduMap from "vue-baidu-map"
+Vue.use(BaiduMap,{
+	// key秘钥
+ ak:"ba45f4870c56bb737255573e25375f9e"
+	
+})
+
+
+
+
+
 Vue.use(jquery);
 
 Vue.config.productionTip = false

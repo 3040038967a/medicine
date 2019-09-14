@@ -2,13 +2,12 @@
 	
 	<div>
 		<p class="nav">
+			
 			<span v-for="(i,index) in arry" :class="{navs:i.kai}"  @click="dick(index)">{{i.name}}</span>
+			
 		</p>
+		
 		<router-view></router-view>
-		
-		
-		
-		
 		
 	</div>
 	
@@ -25,9 +24,18 @@
 			}
 		},
 		
+		
+		
 		mounted:function(){
 			
+			console.log(this.id);
+			
 			this.arry=this.$store.state.nav[2].children;
+			// for(let i=0;i<this.arry.length;i++){
+			// 	this.arry[i].kai=false;
+			// }
+			console.log(this.arry);
+			
 		},
 		
 		methods:{
@@ -35,6 +43,7 @@
 				for(let i=0;i<this.arry.length;i++){
 					this.arry[i].kai=false;
 				}
+				
 				this.arry[index].kai=true;
 				
 				this.$router.replace(this.arry[index].to);

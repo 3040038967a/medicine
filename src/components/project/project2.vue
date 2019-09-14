@@ -1,4 +1,5 @@
 <template>
+	
 	<div class="con">
 		
 		<div v-for="(i,index) in arry" class="item" @click="to(i.id,i.sid)">
@@ -9,10 +10,14 @@
 		
 		</div>
 		
-
+		
+		
+		<button id="more" @click="more" v-if="kai">查看更多 >></button>
 		
 		
 	</div>
+	
+	
 	
 	
 </template>
@@ -21,92 +26,89 @@
 <script>
 	import Data from "../../api/index.js";
 	export default{
-		name:"drug",
+		name:"project2",
 		data(){
 			return{
-				
-				arry:[]
-				
+				arry:[],
+				kai:true,
+				length:0
 			}
 		},
-		
 		mounted(){
+			// this指向
 			let that=this;
-			Data.s4(1).then((res)=>{
-				that.arry=res.val;
-				console.log(that.arry);
+			Data.s3().then((res)=>{
+			      that.arry=res.val;
+				  that.length=res.count;
+				  console.log(that.arry);
 			})
+
+			// 改变路由指向
+			let id=2;
+			this.$store.commit("setto2",id);
 			
-			
-		// let id=this.$store.state.nav.findIndex((i)=>{
-		// 	return i.name=="医药产品";
-		// })
-		// 
+		},
 		
-			// let id=this.$store.state.nav[2].children.findIndex((i)=>{
-			// 	return i.name=="医药产品";
-			// })
+		methods:{
 			
-			console.log(id);
+			// 点击条往详情部分
+			to:function(id,sid){
+				this.$router.replace({
+					name:"chanpin",
+					params:{
+						id:id,
+						sid:sid		
+					}
+				})
+			},
+			
+			// 点击加载更多
+			more:function(){
+				let that=this;
+				console.log(that.length);
+				Data.s3(that.length,null).then((res)=>{
+					// 重新赋值
+				     that.arry=res.val;
+					 that.kai=false;
+					
+				})
+				
+			}
+			
+			
+			
 			
 			
 		},
 		
 		
 		computed:{
-			title:function(title){
-				
-				return function(title){
-
-					return title.substring(0,10)+"...";
+			title:function(txt){
+				return function(txt){
+					// let titles=txt.substring(0,15)+"...";
+					if(txt.length>10){
+						return txt.substring(0,10)+"...";
+					}else{
+						return txt;
+					}
 					
+	
+				}
+
 				}
 				
 				
 				
-				
-				
 			}
-			
-			
-			
-			
-		},
-		
-		
-		methods:{
-			
-			to:function(id,sid){
-				
-				this.$router.replace({
-					name:"chanpin",
-					params:{
-						id:id,
-						sid:sid
-					}
-				})
-				
-				
-				
-			}
-			
-			
-			
-			
-			
-		}
-		
-		
-		
-		
-		
 		
 	}
 	
 </script>
 
 
+
 <style scoped>
+	
 	
 	#more{
 		display: inline-block;

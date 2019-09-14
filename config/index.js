@@ -10,7 +10,19 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+		
+		
+		'/val':{   // 要代理的接口名
+		
+		 target:'http://127.0.0.1:8000/9904PHP/medical', // 要代理的接口地址
+		 changeOrigin:true,  // 允许跨域
+		  pathRewrite:{'^/val':''}  // 接口名重写
+		
+		}
+
+		
+	},
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

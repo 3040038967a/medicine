@@ -33,7 +33,7 @@
 		// 创建之后，给数组赋值
 		created:function(){
 			this.arry=this.$store.state.lb;
-			console.log(this.arry);
+			// console.log(this.arry);
 			
 		},
 		
@@ -64,11 +64,13 @@
 					id:id,
 					id1:id1
 				}
-				console.log(id,id1);
+				
+				// console.log(id,id1);
 				
 				this.$store.commit("setto1",val);
 				// this.$store.commit("setto2",id1);
 				this.$router.replace(this.arry[index].to);
+		
 		
 			}
 			

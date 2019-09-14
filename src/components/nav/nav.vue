@@ -54,7 +54,7 @@
 		font-weight: 700;
 		display: inline-block;
 		width: 20%;
-		padding: 4px 0px;
+		padding: 7px 0px;
 	}
 	
 	

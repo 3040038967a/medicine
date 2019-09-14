@@ -42,4 +42,10 @@ export default {
 	margin: 0px;
 	padding: 0px;
 }
+
+body{
+	
+	background-color: rgb(248,248,248);
+	
+}
 </style>
