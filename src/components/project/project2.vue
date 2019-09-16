@@ -80,8 +80,6 @@
 			
 			
 		},
-		
-		
 		computed:{
 			title:function(txt){
 				return function(txt){

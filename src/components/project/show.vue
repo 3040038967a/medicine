@@ -298,10 +298,20 @@
 				// 	// console.log(that.arry);
 				// })
 				
-				
+				let that=this;
 				Data.s2(1,5).then((res)=>{
 					console.log(res);
+					that.arry=res;
+					
 				})
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				// console.log(id,sid);
 				// let idd=parseInt(id)+1;
